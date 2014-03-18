@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>chatterbox</title>
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- dependencies -->
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <!-- your scripts -->
+    <script src="scripts/config.js"></script>
+    <script src="scripts/app.js"></script>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">chatterbox</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chatrooms <b class="caret"></b></a>
+              <ul class="dropdown-menu chatRooms"></ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+      <!-- Your HTML goes here! -->
+      <!-- <a class="btn btn-primary getMessages" href="#" data-function-name="getMessages">Get Messages</a> -->
+      <div class="jumbotron">
+        <h2>Welcome to Chatterbox!</h2>
+        <!-- <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more »</a></p> -->
+        <form action="#" method="post">
+          <div class="form-group">
+            <input type="text" name="messageContent" class="inputmessage">
+            <button type="submit" class="postMessage">Submit</button>
+            <!-- <input type="submit" name="Send Message" value="Send Message" class="postMessage"> -->
+        </div>
+      </form>
+      </div>
+      <!-- <a class="btn" href="#" data-server-url="https://api.parse.com/1/classes/chatterbox">Set Server Url</a> -->
+      <!-- <div class="alert alert-info">Current ChatRoom:<span class="roomName">4Chan<span></div> -->
+      <div class="row text-left">
+        <div class="col-md-4">
+          <form action="#" method="post">
+            <input type="text" name="username" class="inputusername">
+            <input type="submit" name="Send Message" value="Change Username" class="changeUsername">
+          </form>
+
+          <form action="#" method="post">
+            <input type="text" name="chatrooms" class="inputchatroom">
+            <input type="submit" name="createChatroom" value="Create Chatroom" class="createChatroom">
+          </form>
+    </div>
+        <div class="col-md-8"><div class="panel panel-default col-">
+          <div class="panel-heading">
+          <h3 class="panel-title">Current Room: <span class="roomName badge pull-right">4Chan<span></h3>
+        </div>
+        <div class="panel-body">
+          <div class="innerChat"></div>
+        </div>
+      </div></div>
+</div>
+    </div>
+  </body>
+</html>

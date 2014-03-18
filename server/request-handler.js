@@ -5,7 +5,7 @@
  * this file and include it in basic-server.js so that it actually works.
  * *Hint* Check out the node module documentation at http://nodejs.org/api/modules.html. */
 
-var handleRequest = function(request, response) {
+exports.handleRequest = function(request, response) {
   /* the 'request' argument comes from nodes http module. It includes info about the
   request - such as what URL the browser is requesting. */
 
@@ -29,7 +29,29 @@ var handleRequest = function(request, response) {
    * anything back to the client until you do. The string you pass to
    * response.end() will be the body of the response - i.e. what shows
    * up in the browser.*/
-  response.end("Hello, World!");
+
+  var path = '/messages';
+  // var pathname = url.parse(request.url);
+  // console.log(pathname);
+
+
+  // request.on('data', function(){
+  //   var data = {};
+  //   data.results = [{roomname: "4chan",text: "asdf",username: "latif"}];
+  //   // console.log(data);
+  //   response.end(JSON.stringify(data));
+  // });
+
+  if(request.method === 'POST'){
+    request.on('data', function(data){
+      console.log(data.toString());
+    });
+  }else{
+    var data = {};
+    data.results = [{roomname: "4chan",text: "asdf",username: "latif"}];
+    // console.log(data);
+    response.end(JSON.stringify(data));
+  }
 };
 
 /* These headers will allow Cross-Origin Resource Sharing (CORS).
